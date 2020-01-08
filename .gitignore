@@ -1,0 +1,10 @@
+#Ignore config file
+config.py
+
+#Ignore python files
+*.pyc
+*.pyo
+__pycache__/
+
+#Ignore mac files
+.DS_Store
