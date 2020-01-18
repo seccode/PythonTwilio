@@ -23,6 +23,7 @@ class Reminder():
         return False
 
     def initialMessage(self):
+        self.responded = False
         self.messenger.sendMessage(body=np.random.choice(
             cfg.initialMessages), contact="Marina")
         return
@@ -31,11 +32,11 @@ class Reminder():
         responded = self.checkResponse(since=4)
         if not responded:
             self.messenger.sendMessage(body=np.random.choice(
-                cfg.reminders),contact="Sam")
+                cfg.reminders),contact="Marina")
         else:
             self.responded = True
             self.messenger.sendMessage(body=np.random.choice(
-                cfg.responses), contact="Sam")
+                cfg.responses), contact="Marina")
         return
 
     def tertiaryMessage(self):
@@ -44,10 +45,10 @@ class Reminder():
         newResponded = self.checkResponse(since=8)
         if not newResponded:
             self.messenger.sendMessage(body=np.random.choice(
-                cfg.reminders), contact="Sam")
+                cfg.reminders), contact="Marina")
         else:
             self.messenger.sendMessage(body=np.random.choice(
-                cfg.responses),contact="Sam")
+                cfg.responses),contact="Marina")
         return
     
     def run(self):
@@ -155,4 +156,4 @@ if __name__ == "__main__":
     #         print(v)
     #     print("\n")
 
-    # cb.runReminder()
+    cb.runReminder()
