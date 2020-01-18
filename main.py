@@ -17,8 +17,8 @@ class Reminder():
 
     def checkResponse(self,since=4):
         res = self.messenger.getReceivedMessages(since=since)
-        for item in res:
-            if item.lower in cfg.acceptedResponses:
+        for response in res[cfg.contacts["Marina"]]:
+            if response.lower() in cfg.acceptedResponses:
                 return True
         return False
 
